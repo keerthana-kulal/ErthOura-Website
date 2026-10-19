@@ -1,0 +1,1062 @@
+/* ==================================
+   GENERAL SETTINGS
+================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #10251a;
+    color: #f6f0df;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section {
+    padding: 100px 8%;
+}
+
+.eyebrow {
+    color: #c4d5a3;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.eyebrow.dark {
+    color: #627b4d;
+}
+
+
+/* ==================================
+   NAVIGATION BAR
+================================== */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+    background: rgba(9, 24, 16, 0.55);
+    backdrop-filter: blur(8px);
+
+    animation: navAppear 1s ease both;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #c3d6a1;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav a {
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: #c3d6a1;
+}
+
+
+/* ==================================
+   HOME / HERO SECTION
+================================== */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 150px 8% 80px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 17, 10, 0.94),
+            rgba(5, 19, 11, 0.55)
+        ),
+        url("images/hero.jpg") center / cover no-repeat;
+}
+
+.forest-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(115, 148, 77, 0.20),
+            transparent 45%
+        );
+
+    animation: forestGlow 6s ease-in-out infinite alternate;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 52%;
+
+    animation: slideUp 1.2s ease both;
+}
+
+.hero-title {
+    font-size: clamp(40px, 5.5vw, 78px);
+    line-height: 1.1;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    color: #e0e5d7;
+    line-height: 1.8;
+    max-width: 430px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    color: #d0dda9;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.tagline span {
+    color: #91aa6d;
+}
+
+.explore-button {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    border: 1px solid #c3d6a1;
+    color: #f5f1e5;
+
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.explore-button:hover {
+    background: #c3d6a1;
+    color: #132719;
+    transform: translateY(-4px);
+}
+
+.hero-image {
+    position: relative;
+    z-index: 2;
+
+    width: 42%;
+    max-width: 480px;
+
+    animation:
+        bottleEnter 1.5s ease both,
+        bottleFloat 5s ease-in-out 1.5s infinite;
+}
+
+.hero-image img {
+    width: 100%;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.45);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 8%;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: #c4d5a3;
+
+    animation: fadeIn 2s ease both;
+}
+
+
+/* ==================================
+   OUR STORY
+================================== */
+
+.story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(14, 37, 24, 0.90),
+            rgba(14, 37, 24, 0.96)
+        ),
+        url("images/hero.jpg") center / cover fixed;
+}
+
+.story-image img {
+    border-radius: 5px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+
+    transition: transform 0.8s ease;
+}
+
+.story-image:hover img {
+    transform: scale(1.03);
+}
+
+.story-content h2 {
+    font-size: clamp(36px, 4vw, 58px);
+    line-height: 1.2;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.story-content p {
+    color: #d8dfcf;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.story-content h3 {
+    margin-top: 30px;
+    color: #c3d6a1;
+    letter-spacing: 2px;
+}
+
+
+/* ==================================
+   INGREDIENTS
+================================== */
+
+.ingredients {
+    background: #eae4d3;
+    color: #203c27;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading .eyebrow {
+    color: #75895a;
+}
+
+.section-heading h2 {
+    font-size: clamp(36px, 4vw, 55px);
+    font-weight: normal;
+    margin-bottom: 18px;
+}
+
+.section-heading > p:last-child {
+    color: #65705b;
+    line-height: 1.8;
+}
+
+.ingredients-image {
+    max-width: 1050px;
+    margin: 0 auto 50px;
+}
+
+.ingredients-image img {
+    border-radius: 5px;
+    box-shadow: 0 15px 40px rgba(35, 48, 26, 0.15);
+}
+
+.ingredient-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.ingredient-card {
+    border-top: 1px solid #a8b08f;
+    padding: 25px 10px;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease;
+}
+
+.ingredient-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.ingredient-card span {
+    color: #7d9260;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.ingredient-card h3 {
+    margin: 15px 0;
+    font-size: 21px;
+}
+
+.ingredient-card p {
+    color: #5c6654;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+/* ==================================
+   HEALTHY HAIR SECTION
+================================== */
+
+.healthy {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(18, 39, 26, 0.94),
+            rgba(18, 39, 26, 0.94)
+        ),
+        url("images/hero.jpg") center / cover;
+}
+
+.healthy-image img {
+    border-radius: 5px;
+}
+
+.healthy-content h2 {
+    font-size: clamp(38px, 4vw, 60px);
+    line-height: 1.2;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.benefits {
+    margin-bottom: 35px;
+}
+
+.benefits p {
+    color: #dbe3d0;
+    margin: 18px 0;
+    font-size: 16px;
+}
+
+
+/* ==================================
+   HOW TO USE
+================================== */
+
+.ritual {
+    background: #eae4d3;
+    color: #203c27;
+}
+
+.ritual .section-heading {
+    margin-bottom: 40px;
+}
+
+.ritual-image {
+    max-width: 900px;
+    margin: 0 auto 45px;
+}
+
+.ritual-image img {
+    border-radius: 5px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step {
+    padding: 25px;
+    border-top: 1px solid #a8b08f;
+}
+
+.step span {
+    color: #7d9260;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.step h3 {
+    margin: 18px 0;
+    font-size: 22px;
+}
+
+.step p {
+    color: #5c6654;
+    line-height: 1.8;
+}
+
+
+/* ==================================
+   CONTACT SECTION
+================================== */
+
+.contact {
+    background:
+        linear-gradient(
+            rgba(5, 19, 11, 0.94),
+            rgba(5, 19, 11, 0.96)
+        ),
+        url("images/hero.jpg") center / cover;
+}
+
+.contact-content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-content h2 {
+    font-size: clamp(34px, 4vw, 55px);
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.contact-content > p:not(.eyebrow) {
+    color: #d8dfcf;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 17px;
+
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(220, 231, 208, 0.4);
+
+    color: white;
+    font: inherit;
+
+    outline: none;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: #d4ddcc;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #c3d6a1;
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+.contact button {
+    padding: 17px;
+
+    background: #c3d6a1;
+    color: #152a1a;
+
+    border: none;
+    cursor: pointer;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.contact button:hover {
+    background: #e0e9c7;
+    transform: translateY(-3px);
+}
+
+.contact-note {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #aebba4;
+}
+
+
+/* ==================================
+   FOOTER
+================================== */
+
+footer {
+    background: #08170e;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+footer p {
+    color: #b8c6a8;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.copyright {
+    opacity: 0.7;
+}
+
+
+/* ==================================
+   ANIMATIONS
+================================== */
+
+@keyframes navAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bottleEnter {
+    from {
+        opacity: 0;
+        transform: translateX(70px) scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes bottleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes forestGlow {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ==================================
+   RESPONSIVE DESIGN
+================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .navbar nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 140px 6% 90px;
+    }
+
+    .hero-content {
+        width: 50%;
+    }
+
+    .hero-image {
+        width: 45%;
+    }
+
+    .story,
+    .healthy {
+        gap: 35px;
+    }
+
+    .ingredient-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .navbar {
+        position: absolute;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 170px 6% 75px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 420px;
+        align-self: center;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .story,
+    .healthy {
+        grid-template-columns: 1fr;
+    }
+
+    .story-content {
+        order: 1;
+    }
+
+    .story-image {
+        order: 2;
+    }
+
+    .ingredient-list {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+}
+/* =====================================
+   ANIMATIONS FOR ALL ERTHOURA IMAGES
+===================================== */
+
+/* All product images */
+.story-image img,
+.ingredients-image img,
+.healthy-image img,
+.ritual-image img {
+    opacity: 0;
+    animation: imageReveal 1.5s ease-out forwards,
+               imageFloat 5s ease-in-out 1.5s infinite;
+
+    transform-origin: center;
+    will-change: transform, opacity;
+}
+
+
+/* Image entrance animation */
+@keyframes imageReveal {
+
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.85);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Gentle floating animation */
+@keyframes imageFloat {
+
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-12px) scale(1.02);
+    }
+}
+
+
+/* Smooth hover effect */
+.story-image img,
+.ingredients-image img,
+.healthy-image img,
+.ritual-image img {
+    transition: filter 0.5s ease;
+}
+
+.story-image img:hover,
+.ingredients-image img:hover,
+.healthy-image img:hover,
+.ritual-image img:hover {
+    filter: brightness(1.08);
+}
+
+
+/* Animate the ingredient cards */
+.ingredient-card {
+    animation: cardReveal 1s ease both;
+}
+
+.ingredient-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.ingredient-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.ingredient-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.ingredient-card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+@keyframes cardReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animate headings */
+.section-heading h2,
+.story-content h2,
+.healthy-content h2,
+.contact-content h2 {
+    animation: headingReveal 1.2s ease both;
+}
+
+@keyframes headingReveal {
+
+    from {
+        opacity: 0;
+        letter-spacing: 5px;
+    }
+
+    to {
+        opacity: 1;
+        letter-spacing: normal;
+    }
+}
+
+
+/* Animate the how-to-use steps */
+.step {
+    animation: cardReveal 1s ease both;
+}
+
+.step:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.step:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.step:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+
+/* Mobile-friendly animation */
+@media (max-width: 600px) {
+
+    .story-image img,
+    .ingredients-image img,
+    .healthy-image img,
+    .ritual-image img {
+        animation-duration: 1.2s, 6s;
+    }
+
+}
+
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    .story-image img,
+    .ingredients-image img,
+    .healthy-image img,
+    .ritual-image img,
+    .ingredient-card,
+    .step,
+    .section-heading h2,
+    .story-content h2,
+    .healthy-content h2,
+    .contact-content h2 {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+}
+/* OUR STORY IMAGE ANIMATION */
+
+.story-image {
+    overflow: hidden;
+}
+
+.story-image img {
+    animation: storyAnimation 2s ease-out both,
+               storyFloat 5s ease-in-out 2s infinite;
+}
+
+@keyframes storyAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(-100px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes storyFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+/* INGREDIENTS IMAGE ANIMATION */
+
+.ingredients-image {
+    overflow: hidden;
+}
+
+.ingredients-image img {
+    animation: ingredientsAnimation 2s ease-out both,
+               ingredientsFloat 6s ease-in-out 2s infinite;
+}
+
+@keyframes ingredientsAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes ingredientsFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* HEALTHY HAIR IMAGE ANIMATION */
+
+.healthy-image {
+    overflow: hidden;
+}
+
+.healthy-image img {
+    animation: healthyAnimation 2s ease-out both,
+               healthyFloat 5s ease-in-out 2s infinite;
+}
+
+@keyframes healthyAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes healthyFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+/* HOW TO USE IMAGE ANIMATION */
+
+.ritual-image {
+    overflow: hidden;
+}
+
+.ritual-image img {
+    animation: ritualAnimation 2s ease-out both,
+               ritualFloat 6s ease-in-out 2s infinite;
+}
+
+@keyframes ritualAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(100px) scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes ritualFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* HEADING ANIMATIONS */
+
+.story-content,
+.section-heading,
+.healthy-content,
+.contact-content {
+    animation: headingAnimation 1.5s ease-out both;
+}
+
+@keyframes headingAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
